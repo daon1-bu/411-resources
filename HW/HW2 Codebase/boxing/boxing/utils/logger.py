@@ -5,6 +5,13 @@ from flask import current_app, has_request_context
 
 
 def configure_logger(logger):
+    """
+    Makes a logger that works with flask. Sets the logging level to debug, attaches a console handler, and finally applies a formatter 
+    to include timestamps. 
+
+    Args:
+        logger (_type_): The logger instance to be configured. 
+    """
     logger.setLevel(logging.DEBUG)
 
     # Create a console handler that logs to stderr

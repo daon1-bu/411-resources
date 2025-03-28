@@ -14,6 +14,17 @@ RANDOM_ORG_URL = os.getenv("RANDOM_ORG_URL",
 
 
 def get_random() -> float:
+    """
+    Make an API call to return a random float. Ensures a valid response and converts the JSON to a float. 
+
+    Raises:
+        ValueError: If the API response can't be converted to a float. 
+        RuntimeError: If the request times out. 
+        RuntimeError: If the request fails.
+
+    Returns:
+        float: A random float. 
+    """
     try:
         response = requests.get(RANDOM_ORG_URL, timeout=5)
 
